@@ -26,12 +26,12 @@ private final UserRepository userRepository;
 
     @Override
     public void updateUser(User user) {
-        userRepository.save(user);
+        userRepository.saveAndFlush(user);
     }
 
     @Override
     public List<User> findAll() {
-        return (List<User>) userRepository.findAll();
+       return userRepository.findAll();
     }
 
     @Override

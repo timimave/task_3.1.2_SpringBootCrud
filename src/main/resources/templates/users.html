@@ -108,9 +108,9 @@
       <td th:text="${user.getId()}"></td>
       <td th:text="${user.getName()}"></td>
       <td th:text="${user.getLastName()}"></td>
-      <td th:text="${user.getPersonWhoStudiesJava()()}"></td>
+      <td th:text="${user.getPersonWhoStudiesJava()}"></td>
 
-      <td><a th:text="Edit"
+      <td> <a th:text="Edit"
              th:href="@{editUser/{userId}(userId=${user.getId()})}"></a>&nbsp;|&nbsp;<a
           th:text="Delete"
           th:href="@{deleteUser/{userId}(userId=${user.getId()})}"></a>
@@ -124,7 +124,16 @@
 <br><br>
 
 
-<a href="http://localhost:8080/spring_mvc_war_exploded/addUser" class="button-link">Add User</a>
+<!--<a href="http://localhost:8080/spring_mvc_war_exploded/addUser" class="button-link">Add User</a>-->
+
+<!--<a th:href="addUser"><input type="button" id="addB" value="Add new user"></a>-->
+
+<div style="display: flex; justify-content: center;">
+  <a th:href="addUser" style="max-width: 500px;">
+    <input type="button" id="addB" value="Add new user">
+  </a>
+</div>
+
 
 </body>
 </html>

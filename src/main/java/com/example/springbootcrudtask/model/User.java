@@ -12,13 +12,14 @@ import jakarta.persistence.Table;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+
+    @Column(name = "name")
     private String name;
-    @Column
+    @Column(name = "last_name")
     private String lastName;
-    @Column
+    @Column(name = "is_person_studying_java")
     private Boolean PersonWhoStudiesJava;
 
     public User() {
@@ -61,6 +62,7 @@ public class User {
     public void setPersonWhoStudiesJava(Boolean personWhoStudiesJava) {
         PersonWhoStudiesJava = personWhoStudiesJava;
     }
+
     @Override
     public String toString() {
         return String.format(
