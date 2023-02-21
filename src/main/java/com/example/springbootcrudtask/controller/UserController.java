@@ -4,6 +4,7 @@ import com.example.springbootcrudtask.model.User;
 import com.example.springbootcrudtask.service.UserDaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,7 +21,7 @@ public class UserController {
         this.userService = userService;
     }
     @GetMapping()
-    public String getPartOfCarsList(ModelMap model) {
+    public String getAllUsers(ModelMap model) {
         model.addAttribute("users", userService.findAll());
         return "users";
     }
